@@ -1,0 +1,17 @@
+@import "icons";
+
+@import "buttons";
+@import "inputs";
+
+@import "helpers";
+
+* {
+  @include box-sizing();
+}
+
+body {
+  -webkit-backface-visibility: hidden;
+  background: $black;
+  font-family: 'Geometria';
+  @include custom-cursor(default);
+}

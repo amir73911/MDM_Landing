@@ -1,0 +1,111 @@
+.popup-map {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  background: rgba($overlay_dark, .9);
+  @include transition(all $animation_time);
+  @include screen(1025px, 1920px) {
+    @include flex-childs-vertical-align(center, center);
+  }
+  &.showed {
+    top: 0;
+  }
+  .map {
+    //background: url("../images/map.png") top left no-repeat;
+    //background-size: auto 100%;
+    position: relative;
+    text-align: center;
+    max-width: 1470px;
+    max-height: 829px;
+    width: 77%;
+    height: 84%;
+    @include ipad {
+      display: none;
+    }
+    .map-image {
+      max-height: 100%;
+      max-width: 100%;
+    }
+    .marker {
+      position: absolute;
+      font: 13px/14px 'MetaPro-Normal';
+      letter-spacing: 2px;
+      color: $white;
+      text-transform: uppercase;
+      &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 14px;
+        height: 14px;
+        background: $orange;
+        margin: -2px 9px 0 0;
+        @include box-sizing(content-box);
+        @include border-radius(50%);
+      }
+      &:hover {
+        &:before {
+          margin: -9px 1px -8px -8px;
+          border: 8px solid rgba($orange, .2);
+          @include background-clip(padding-box);
+        }
+      }
+      &.selected {
+        &:before {
+          margin: -9px 1px -8px -8px;
+          border: 8px solid rgba($orange, .4);
+          @include box-shadow(rgba($orange, .2) 0 0 0 15px);
+          @include background-clip(padding-box);
+        }
+      }
+      &.left-side {
+        direction: rtl;
+        &:before {
+          margin: -2px 0 0 9px;
+        }
+        &:hover,
+        &.selected {
+          &:before {
+            margin: -9px -8px -8px 1px;
+          }
+        }
+      }
+    }
+  }
+  .city-list {
+    display: none;
+    padding: 175px 50px 0;
+    .col {
+      width: 25%;
+      float: left;
+    }
+    .town-list-item {
+      margin-bottom: 40px;
+      @include clearfix();
+      @include childs-vertical-align(top, true);
+      .letter {
+        font: 22px/35px 'Geometria-Bold';
+        color: $orange;
+        width: 65px;
+        text-align: center;
+      }
+      .cites {
+        list-style: none;
+        font: 18px/35px 'Geometria';
+      }
+    }
+    @include ipad {
+      display: block;
+    }
+  }
+}
+
+.no-touch {
+  .popup-map {
+    @include flex-childs-vertical-align(center, space-around);
+  }
+}

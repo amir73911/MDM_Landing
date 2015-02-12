@@ -1,0 +1,22 @@
+.pull-left {float: left;}
+.pull-right {float: right;}
+
+.text-center {text-align: center;}
+.text-right {text-align: right;}
+.text-left {text-align: left;}
+
+.moveLeftAnimate {
+  @include transition(all $animation_time);
+  @include transform(translate3d(-$third, 0, 0));
+  @include ipad {
+    @include transform(translate3d(-50%, 0, 0));
+  }
+}
+.moveRightAnimate {
+  @include transition(all $animation_time);
+  @include transform(translate3d(0, 0, 0));
+}
+
+.vertical-middle {
+  @include flex-childs-vertical-align();
+}

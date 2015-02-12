@@ -1,0 +1,17 @@
+main {
+  z-index: 2;
+  .section {
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    height: 100% !important;
+    .fp-tableCell {
+      height: 100% !important;
+      padding: 118px 50px 80px;
+      position: relative;
+      @include display-flex;
+      @include align-items(center);
+      @include justify-content(center);
+    }
+  }
+}

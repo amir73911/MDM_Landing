@@ -1,0 +1,48 @@
+@import "compass/utilities/sprites/base";
+
+/* Small Icons */
+@import "icons/*.png";
+@include all-icons-sprites;
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icons-triangle-down {
+  width: 6px;
+  height: 3px;
+}
+.icons-triangle-lock {
+  width: 14px;
+  height: 21px;
+}
+.icons-arrows-down {
+  width: 12px;
+  height: 14px;
+}
+.icons-arrow-right {
+  width: 8px;
+  height: 12px;
+}
+
+/* Mega Icons */
+@import "mega-icons/*.png";
+@include all-mega-icons-sprites;
+.mega-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.mega-icons-diamond {
+  width: 126px;
+  height: 136px;
+}
+.mega-icons-finger {
+  width: 102px;
+  height: 122px;
+}
+.mega-icons-planet {
+  width: 165px;
+  height: 165px;
+}

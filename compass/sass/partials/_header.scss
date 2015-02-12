@@ -1,0 +1,29 @@
+header {
+  position: fixed;
+  top: -118px;
+  left: 0;
+  width: 100%;
+  padding: 32px 50px 0;
+  z-index: 4;
+  @include transition(all $animation_time);
+  @include flex-childs-vertical-align();
+  .logo {
+    background: inline-image("logo.png");
+    width: 300px;
+    height: 86px;
+  }
+  .btn {
+    text-transform: none;
+    font: 16px 'MetaPro-Normal';
+    .icons-triangle-down {
+      margin-left: 3px;
+    }
+  }
+}
+
+
+.loaded {
+  header {
+    top: 0;
+  }
+}

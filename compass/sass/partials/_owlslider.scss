@@ -1,0 +1,26 @@
+.owl-carousel .owl-grab {
+  @include custom-cursor(default);
+}
+.owl-stage-outer,
+.owl-stage,
+.owl-item {
+  height: 100%;
+}
+.owl-controls {
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: 0;
+    width: $third;
+    height: 100%;
+    font-size: 0;
+  }
+  .owl-prev {
+    left: 0;
+    @include custom-cursor(left);
+  }
+  .owl-next {
+    right: 0;
+    @include custom-cursor(right);
+  }
+}

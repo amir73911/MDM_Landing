@@ -1,0 +1,103 @@
+@mixin clearfix() {
+    // http://nicolasgallagher.com/micro-clearfix-hack/
+    // USAGE: @include clearfix();
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin childs-vertical-align($type: middle, $no-gap: false) {
+    @if ($no-gap) {
+        font-size: 0;
+    }
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: $type;
+        height: 100%;
+    }
+    &>* {
+        display: inline-block;
+        vertical-align: $type;
+    }
+}
+
+@mixin flex-childs-vertical-align($type: center, $justify: space-between) {
+    @include display-flex(inline-flex);
+    @include align-items($type);
+    @include justify-content($justify);
+}
+
+@mixin custom-cursor($type: default) {
+    @if($type == 'default') {
+        cursor: inline-image('cursors/default.png') 15 15, default;
+    }
+    @if($type == 'pointer') {
+        cursor: inline-image('cursors/default.png') 15 15, pointer;
+    }
+    @if($type == 'close') {
+        cursor: inline-image('cursors/close.png') 15 15, not-allowed;
+    }
+    @if($type == 'up') {
+        cursor: inline-image('cursors/up.png') 15 15, move;
+    }
+    @if($type == 'down') {
+        cursor: inline-image('cursors/down.png') 15 15, move;
+    }
+    @if($type == 'left') {
+        cursor: inline-image('cursors/left.png') 15 15, move;
+    }
+    @if($type == 'right') {
+        cursor: inline-image('cursors/right.png') 15 15, move;
+    }
+}
+
+@mixin rotate() {
+    @include keyframes(rot) {
+        0% {
+            transform: rotate(0deg)
+            translate(0)
+            rotate(0deg);
+        }
+        50% {
+            transform: rotate(180deg)
+            translate(-20px)
+            rotate(-180deg);
+        }
+        100% {
+            transform: rotate(360deg)
+            translate(0)
+            rotate(-360deg);
+        }
+    }
+    @include animation(rot $animation_time $animation_time/2 linear);
+}
+
+.image_eff {
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &:before {
+        z-index: 5;
+        background: rgba($overlay_blue, .4);
+    }
+    &:after {
+        z-index: 5;
+        @include background-image(radial-gradient(100% 100%, rgba($white, 0) 0%, rgba($black, .4) 100%));
+    }
+}

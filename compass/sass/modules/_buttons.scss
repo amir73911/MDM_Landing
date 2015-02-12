@@ -1,0 +1,62 @@
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  font: 14px/50px 'Geometria-Medium';
+  text-transform: uppercase;
+  height: 50px;
+  padding: 0 30px;
+  @include border-radius(50px);
+  @include transition(all 0.5s);
+  @include ipad {
+    padding: 0 20px;
+  }
+  &.btn-orange {
+    color: $white;
+    background: $orange;
+    &:hover {
+      background: lighten($orange, 5%);
+    }
+  }
+  &.btn-transparent {
+    background: none;
+    border: 2px solid rgba($white, .15);
+    padding: 0 28px;
+    &:hover {
+      border-color: $white;
+    }
+  }
+  &.btn-with-icon {
+    line-height: 45px;
+    @include ipad {
+      line-height: 47px;
+    }
+    &.icon-last {
+      .icon {
+        margin-left: 5px;
+      }
+    }
+    .icon {
+      &:first-child {
+        margin-top: -2px;
+        margin-right: 8px;
+      }
+    }
+    .text {
+      vertical-align: middle;
+    }
+  }
+  &.btn-with-ico-only {
+    line-height: 44px;
+    width: 50px;
+    padding: 0;
+    text-align: center;
+  }
+  &.btn-mega {
+    width: 220px;
+    height: 220px;
+    padding: 0;
+    line-height: 212px;
+    text-align: center;
+    @include border-radius(50%);
+  }
+}

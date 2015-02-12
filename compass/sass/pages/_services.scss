@@ -1,0 +1,35 @@
+.services-page {
+  background: url("../images/bgs/2.jpg") no-repeat center top;
+  .jumbo-h1,
+  .jumbo-caption {
+    @include opacity(0);
+    @include transition(all $animation_time);
+    &.showed {
+      @include opacity(1);
+    }
+  }
+  .mega-buttons {
+    li {
+      @include opacity(0);
+      @include transition(all $animation_time);
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 55px;
+      @include ipad {
+        margin: 0 30px;
+      }
+      &.showed {
+        @include opacity(1);
+      }
+      .caption {
+        font: 18px/30px 'Geometria';
+        color: $gray;
+        padding: 0 0 30px;
+        @include ipad {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

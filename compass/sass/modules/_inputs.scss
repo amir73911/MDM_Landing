@@ -1,0 +1,56 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  border: 1px solid $light_gray;
+  padding: 20px;
+  width: 100%;
+  margin: 10px 0;
+  font: 14px 'Geometria-Medium';
+  color: $blue_text;
+  outline: none;
+  @include custom-cursor(default);
+  @include transition(border-color $animation_time);
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $orange;
+    color: $black;
+  }
+}
+
+select {
+  -webkit-appearance: button;
+  -webkit-user-select: none;
+  padding-right: 50px;
+  background: inline-image('base64/triangle-down-black.png') 96% center no-repeat;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+textarea {
+  min-height: 200px;
+  max-height: 300px;
+}
+
+.btn-block {
+  padding: 30px 0;
+}
+
+form {
+  .pull-left,
+  .pull-right {
+    width: 50%;
+  }
+  .pull-left {
+    padding-right: 10px;
+  }
+  .pull-right {
+    padding-left: 10px;
+  }
+}

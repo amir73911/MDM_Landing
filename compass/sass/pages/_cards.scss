@@ -1,0 +1,30 @@
+.cards-page {
+  background: url("../images/bgs/3.jpg") no-repeat center top;
+  .hand {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    width: 50%;
+    @include ipad {
+      bottom: 70px;
+    }
+    &.rotate {
+      @include rotate();
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .content-wrapp {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    text-align: left;
+    padding: 0 0 80px 5%;
+    @include flex-childs-vertical-align();
+  }
+}
