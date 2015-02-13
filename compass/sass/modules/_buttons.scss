@@ -26,10 +26,7 @@
     }
   }
   &.btn-with-icon {
-    line-height: 45px;
-    @include ipad {
-      line-height: 47px;
-    }
+    line-height: 47px;
     &.icon-last {
       .icon {
         margin-left: 5px;

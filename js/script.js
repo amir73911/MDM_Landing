@@ -41,7 +41,6 @@ $(document).ready(function(){
     rightContent();
     showMap();
     showNews();
-    mapCoords();
     onload_anim();
 
 }());
@@ -108,6 +107,25 @@ function right_content_load(id) {
 
 }
 
+function showMap() {
+    var map_btn = $('.map-btn'),
+        popup_map = $('.popup-map');
+
+    map_btn.click(function(e){
+
+        mapCoords();
+
+        e.preventDefault();
+        if (popup_map.hasClass('showed')) {
+            popup_map.removeClass('showed');
+            $.fn.fullpage.setAllowScrolling(true);
+        } else {
+            popup_map.addClass('showed');
+            $.fn.fullpage.setAllowScrolling(false);
+        }
+    });
+}
+
 function mapCoords() {
     var originalCoords = [
             // left, top, name, text first (true/false)
@@ -129,6 +147,7 @@ function mapCoords() {
         map = $('.map'),
         originalHeight = 829,
         ratio = $('.map-image').height()/originalHeight,
+        leftOffset = (map.width()-$('.map-image').width())/ 2,
         leftSideClass = 'left-side',
         buff = '',
         left = '',
@@ -138,7 +157,7 @@ function mapCoords() {
     for (var i=0; i<originalCoordsLenght; i++) {
 
         buff = (originalCoords[i][3]) ? leftSideClass : '' ;
-        left = Math.round(originalCoords[i][1]*ratio);
+        left = Math.round(originalCoords[i][1]*ratio) + leftOffset;
         top = Math.round(originalCoords[i][0]*ratio);
         name = originalCoords[i][2];
 
@@ -150,24 +169,6 @@ function mapCoords() {
             item.css('left', parseInt(item.css('left'))-(item.width()-14));
         }
     }
-}
-
-function showMap() {
-    var map_btn = $('.map-btn'),
-        popup_map = $('.popup-map');
-
-    mapCoords();
-
-    map_btn.click(function(e){
-        e.preventDefault();
-        if (popup_map.hasClass('showed')) {
-            popup_map.removeClass('showed');
-            $.fn.fullpage.setAllowScrolling(true);
-        } else {
-            popup_map.addClass('showed');
-            $.fn.fullpage.setAllowScrolling(false);
-        }
-    });
 }
 
 function showNews() {
