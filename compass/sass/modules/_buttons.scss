@@ -7,8 +7,11 @@
   padding: 0 30px;
   @include border-radius(50px);
   @include transition(all 0.5s);
-  @include ipad {
-    padding: 0 20px;
+  @include ipad(landscape) {
+    padding: 0 20px !important;
+  }
+  @include ipad(portrait) {
+    padding: 0 17px !important;
   }
   &.btn-orange {
     color: $white;
@@ -30,6 +33,7 @@
     &.icon-last {
       .icon {
         margin-left: 5px;
+        margin-top: -2px;
       }
     }
     .icon {

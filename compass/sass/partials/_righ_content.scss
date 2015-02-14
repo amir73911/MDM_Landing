@@ -5,7 +5,7 @@
   bottom: 0;
   z-index: 1;
   width: $third;
-  background: $black;
+  background: $white;
   padding: 60px 50px 0 60px;
   overflow: hidden;
   overflow-y: auto;
@@ -13,9 +13,8 @@
   @include ipad {
     width: 50%;
   }
-  &.showed {
-    background: $white;
-    right: 0;
+  @include ipad(portrait) {
+    width: $third*2;
   }
   .right-content-text {
     display: block;
@@ -44,6 +43,9 @@
     @include opacity(1);
     @include ipad {
       width: 50%;
+    }
+    @include ipad(portrait) {
+      width: $third;
     }
   }
 }

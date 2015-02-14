@@ -7,6 +7,9 @@ footer {
   height: 80px;
   background: rgba(black, 0.6);
   padding: 0 50px;
+  @include ipad(portrait) {
+    padding: 0 15px;
+  }
   @include transition(all $animation_time);
   @include flex-childs-vertical-align();
   .footer-btn {
@@ -27,6 +30,11 @@ footer {
     .text {
       vertical-align: middle;
     }
+    @include ipad(portrait) {
+     .icon {
+       display: none;
+     }
+    }
   }
   .footer-phones-block {
     .phone-num {
@@ -42,6 +50,9 @@ footer {
     }
     .btn {
       margin: 0 30px;
+      @include ipad(portrait) {
+        margin: 0 5px;
+      }
     }
   }
 }

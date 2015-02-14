@@ -1,5 +1,9 @@
 .services-page {
   background: url("../images/bgs/2.jpg") no-repeat center top;
+  @include ipad(portrait) {
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
   .jumbo-h1,
   .jumbo-caption {
     @include opacity(0);
@@ -14,9 +18,10 @@
       @include transition(all $animation_time);
       display: inline-block;
       vertical-align: top;
-      margin: 0 55px;
-      @include ipad {
-        margin: 0 30px;
+      margin: 0 20px;
+      width: 25%;
+      @include ipad(portrait) {
+        width: auto;
       }
       &.showed {
         @include opacity(1);

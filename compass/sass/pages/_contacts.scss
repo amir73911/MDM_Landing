@@ -9,6 +9,12 @@
     @include ipad {
       width: $third*2;
     }
+    @include max-screen-height(767px) {
+      width: $third*2;
+    }
+    @include ipad(portrait) {
+      width: 80%;
+    }
     @include flex-childs-vertical-align();
     .circle-half {
       position: absolute;

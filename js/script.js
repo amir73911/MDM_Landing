@@ -1,27 +1,34 @@
-$(document).ready(function(){
+$(document).load(function(){
     'use strict';
 
     $('#fullpage').fullpage({
         anchors: ['main', 'services', 'cards', 'news', 'contacts'],
         navigation: true,
+        scrollOverflow: true,
         navigationPosition: 'left',
         navigationTooltips: ['Главная', 'Сервисы', 'Карты', 'События', 'Контакты'],
         afterLoad: function( anchorLink, index){
             if(anchorLink == 'services'){
-                $('.services-page .jumbo-h1, .services-page .jumbo-caption').addClass('showed');
-
-                $('.mega-buttons li').eq(0).delay(300).queue(function(){
-                    $(this).addClass('showed').dequeue();
-                });
-                $('.mega-buttons li').eq(1).delay(600).queue(function(){
-                    $(this).addClass('showed').dequeue();
-                });
-                $('.mega-buttons li').eq(2).delay(900).queue(function(){
-                    $(this).addClass('showed').dequeue();
-                });
+                if (!$('.services-page .jumbo-h1').hasClass('showed')) {
+                    $('.services-page .jumbo-h1, .services-page .jumbo-caption').addClass('showed');
+                    $('.mega-buttons li').eq(0).delay(300).queue(function(){
+                        $(this).addClass('showed').dequeue();
+                    });
+                    $('.mega-buttons li').eq(1).delay(600).queue(function(){
+                        $(this).addClass('showed').dequeue();
+                    });
+                    $('.mega-buttons li').eq(2).delay(900).queue(function(){
+                        $(this).addClass('showed').dequeue();
+                    });
+                }
             }
             if(anchorLink == 'cards'){
                 $('.hand').addClass('rotate');
+            }
+        },
+        onLeave: function(index, nextIndex, direction){
+            if(index == 3){
+                $('.hand').removeClass('rotate');
             }
         }
     });
@@ -41,10 +48,13 @@ $(document).ready(function(){
     rightContent();
     showMap();
     showNews();
-    onload_anim();
 
 }());
 
+function loading() {
+
+    $('body').addClass('loaded');
+}
 
 function rightContent() {
     var body = $('body'),
@@ -215,10 +225,6 @@ function showNews() {
         $('.news-list-content .news-item').scrollTop();
     }, 500);
 
-    $(document).on('scroll', '.news-list-content', function(){
-        console.log(123)
-    });
-
 }
 
 function isScrolledIntoView(elem)
@@ -230,8 +236,4 @@ function isScrolledIntoView(elem)
     var elemBottom = elemTop + $(elem).height();
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
-
-function onload_anim() {
-    $('body').addClass('loaded');
 }

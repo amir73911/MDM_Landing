@@ -9,6 +9,9 @@
     @include ipad {
       bottom: 70px;
     }
+    @include ipad(portrait) {
+      display: none;
+    }
     &.rotate {
       @include rotate();
     }
@@ -26,5 +29,10 @@
     text-align: left;
     padding: 0 0 80px 5%;
     @include flex-childs-vertical-align();
+    @include ipad(portrait) {
+      @include flex-childs-vertical-align(center, center);
+      width: 100%;
+      text-align: center;
+    }
   }
 }

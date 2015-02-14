@@ -11,6 +11,9 @@
   @include ipad {
     @include transform(translate3d(-50%, 0, 0));
   }
+  @include ipad(portrait) {
+    @include transform(translate3d(-$third*2, 0, 0));
+  }
 }
 .moveRightAnimate {
   @include transition(all $animation_time);

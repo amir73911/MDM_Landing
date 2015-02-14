@@ -35,6 +35,12 @@
           @include ipad {
             width: 50%;
           }
+          @include max-screen-height(767px) {
+            width: $third*2;
+          }
+          @include ipad(portrait) {
+            width: $third*2;
+          }
           time {
             display: inline-block;
             padding: 0 12px;
@@ -128,12 +134,9 @@
   .news-list-content {
     margin: 7.3% auto;
     width: $third*2;
-    /*.news-item {
-      display: none;
-      &.selected {
-        display: block;
-      }
-    }*/
+    @include ipad(portrait) {
+      width: 80%;
+    }
     .news-item-header {
       position: relative;
       text-align: center;

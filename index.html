@@ -19,10 +19,22 @@
     <link rel="stylesheet" href="css/dropzone.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.0.min.js"><\/script>')</script>
+
+    <script>
+        $(window).load(function() {
+            $('.loading').fadeOut();
+            loading();
+        });
+    </script>
+
     <script src="js/libs/modernizr-2.7.1.min.js"></script>
 </head>
 
 <body>
+    <div class="loading"></div>
     <header>
         <a class="btn btn-transparent btn-with-icon map-btn" href="#">
             <span class="icon icons-planet"></span>
@@ -45,26 +57,30 @@
         </div>
         <div class="section services-page">
             <div class="content">
-                <h1 class="jumbo-h1">Управление крупными состояниями </h1>
-                <p class="jumbo-caption">Персональный доступ к неограниченному спектру продуктов <br/> ведущих финансовых организаций мира</p>
+                <h1 class="jumbo-h1">Управление крупными капиталами в банке, достойном вашего доверия</h1>
+                <p class="jumbo-caption">Приветствуем вас в нашем частном банке – клубе для избранных. <br/> Мы готовы
+                    предложить  все привилегии премиального обслуживания, <br/> разработанные специально для вас лучшими
+                    финансовыми менеджерами, аналитиками и экспертами:</p>
                 <ul class="mega-buttons">
                     <li>
                         <a class="btn btn-transparent btn-mega right-content-btn" data-content-id="content1" href="#">
                             <span class="mega-icon mega-icons-diamond"></span>
                         </a>
-                        <p class="caption">Лучшие финансовые продукты <br/> и инструменты</p>
+                        <p class="caption">эффективные финансовые решения,  отвечающие инвестиционным потребностям, <br/>
+                            и специальные кредитные предложения для финансирования текущих проектов</p>
                     </li>
                     <li>
                         <a class="btn btn-transparent btn-mega right-content-btn" data-content-id="content2" href="#">
                             <span class="mega-icon mega-icons-finger"></span>
                         </a>
-                        <p class="caption">Решение индивидуальных задач <br/> и потребностей</p>
+                        <p class="caption">финансовая экспертиза, инвестиционное  консультирование, формирование
+                            <br/> индивидуального портфеля</p>
                     </li>
                     <li>
                         <a class="btn btn-transparent btn-mega right-content-btn" data-content-id="content3" href="#">
                             <span class="mega-icon mega-icons-planet"></span>
                         </a>
-                        <p class="caption">Премиальное обслуживание, <br/> где бы вы ни находились</p>
+                        <p class="caption">высокий уровень сервиса,  индивидуальное обслуживание,  максимальный комфорт</p>
                     </li>
                 </ul>
                 <div id="content1" class="right-content-text">
@@ -424,9 +440,7 @@
         </div>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.0.min.js"><\/script>')</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.6/jquery.fullPage.min.js"></script>
+    <script src="js/libs/jquery.fullPage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.6/vendors/jquery.easings.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.6/vendors/jquery.slimscroll.min.js"></script>
     <script src="js/libs/owl.carousel.min.js"></script>

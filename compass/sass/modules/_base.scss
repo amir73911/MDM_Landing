@@ -15,3 +15,13 @@ body {
   font-family: 'Geometria';
   @include custom-cursor(default);
 }
+
+.loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: $overlay url("http://www.preloading.com.au/resources/loading213.gif") center center no-repeat;
+  z-index: 500;
+}
