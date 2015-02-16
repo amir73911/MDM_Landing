@@ -12,6 +12,15 @@
     @include max-screen-height(767px) {
       width: $third*2;
     }
+    @include max-screen(1750px) {
+      width: 50%;
+    }
+    @include max-screen(1350px) {
+      width: $third*2;
+    }
+    @include max-screen(900px) {
+      width: 75%;
+    }
     @include ipad(portrait) {
       width: 80%;
     }

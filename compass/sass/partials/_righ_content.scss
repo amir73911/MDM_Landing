@@ -23,6 +23,9 @@
   .recall-form {
     display: block;
   }
+  &.showed {
+    z-index: 10;
+  }
 }
 
 .right-content-overlay {

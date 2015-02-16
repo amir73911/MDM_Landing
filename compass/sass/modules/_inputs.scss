@@ -6,6 +6,7 @@ input[type="number"],
 input[type="search"],
 select,
 textarea {
+  -webkit-appearance: none;
   border: 1px solid $light_gray;
   padding: 20px;
   width: 100%;
@@ -24,7 +25,6 @@ textarea {
 }
 
 select {
-  -webkit-appearance: button;
   -webkit-user-select: none;
   padding-right: 50px;
   background: inline-image('base64/triangle-down-black.png') 96% center no-repeat;

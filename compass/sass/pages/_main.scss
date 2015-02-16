@@ -1,14 +1,19 @@
 .main-page {
   background: url("../images/bgs/1.jpg") no-repeat center top;
-  .jumbo-h1,
-  .jumbo-caption {
-    @include text-shadow($white 0 0 80px, $white 0 0 80px, $white 0 0 80px, $white 0 0 80px, $white 0 0 80px, $white 0 0 80px);
-    @include opacity(.4);
-    @include transition(all $animation_time);
+}
+
+.desktop {
+  .main-page {
+    .jumbo-h1,
+    .jumbo-caption {
+      @include text-shadow($white 0 0 80px, $white 0 0 80px, $white 0 0 80px, $white 0 0 80px, $white 0 0 80px, $white 0 0 80px);
+      @include opacity(.4);
+      @include transition(all $animation_time);
+    }
   }
 }
 
-.loaded {
+.desktop.loaded {
   .main-page {
     .jumbo-h1,
     .jumbo-caption {

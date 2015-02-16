@@ -5,6 +5,7 @@
   text-transform: uppercase;
   height: 50px;
   padding: 0 30px;
+  white-space: nowrap;
   @include border-radius(50px);
   @include transition(all 0.5s);
   @include ipad(landscape) {
@@ -49,7 +50,7 @@
   &.btn-with-ico-only {
     line-height: 44px;
     width: 50px;
-    padding: 0;
+    padding: 0 !important;
     text-align: center;
   }
   &.btn-mega {
