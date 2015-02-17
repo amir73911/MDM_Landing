@@ -2,7 +2,7 @@
   background: url("../images/bgs/4.jpg") no-repeat center top;
   .contacts-block {
     width: $third;
-    padding: 45px 55px;
+    padding: 35px 40px;
     position: relative;
     z-index: 0;
     background: rgba($black, .5);
@@ -84,13 +84,13 @@
       .contacts-content-right {
         width: $third;
         float: right;
-        padding-left: 30px;
+        padding-left: 25px;
         .names {
           .name {
             margin-bottom: 25px;
             span {
               font: 20px/25px 'MetaPro-Normal';
-              letter-spacing: -2px;
+              letter-spacing: -1px;
               display: block;
             }
             a {

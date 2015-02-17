@@ -216,6 +216,37 @@
                         </p>
                     </div>
                 </div>
+                <div class="news-item">
+                    <div class="news-item-header">
+                        <div class="news-image" style="background-image: url('http://www.freelancejob.ru/upload/745/26782650407403.jpg')"></div>
+                        <div class="news-title">
+                            <time datetime="2014-04-25">15.08.2013</time>
+                            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus eveniet</h1>
+                            <a class="btn btn-transparent btn-with-icon news-btn" href="#"><span class="icon icons-book"></span>Читать</a>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut dolorem iste
+                            molestiae ut. Corporis dicta reiciendis velit? Consequuntur eveniet maiores molestiae
+                            nemo nulla, obcaecati quo sed velit voluptate voluptatum.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut dolorem iste
+                            molestiae ut. Corporis dicta reiciendis velit? Consequuntur eveniet maiores molestiae
+                            nemo nulla, obcaecati quo sed velit voluptate voluptatum.
+                        </p>
+                        <p class="bordered">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut dolorem iste
+                            molestiae ut. Corporis dicta reiciendis velit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut dolorem iste
+                            molestiae ut. Corporis <a href="#">dicta reiciendis velit</a>? Consequuntur eveniet maiores molestiae
+                            nemo nulla, obcaecati quo sed velit voluptate voluptatum.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="section contacts-page">
@@ -270,37 +301,10 @@
         </div>
     </main>
     <footer>
-        <a class="footer-btn icon-first right-content-btn" data-content-id="recall_form" href="#"><span class="icon icons-letter"></span><span class="text">Написать письмо</span></a>
-        <div id="recall_form" class="recall-form">
-            <h1>Обратная связь</h1>
-            <form action="#">
-                <div class="row">
-                    <select>
-                        <option value="1">Тема сообщения: кредиты</option>
-                        <option value="2">Тема сообщения: тест</option>
-                        <option value="3">Тема сообщения: тест2</option>
-                    </select>
-                </div>
-                <div class="row">
-                    <div class="pull-left">
-                        <input type="text" placeholder="Ваше имя"/>
-                    </div>
-                    <div class="pull-right">
-                        <input type="text" placeholder="Ваш e-mail"/>
-                    </div>
-                </div>
-                <div class="row">
-                    <textarea placeholder="Сообщение"></textarea>
-                </div>
-                <div class="btn-block text-center">
-                    <a class="btn btn-orange recall-btn" href="#">Отправить сообщение</a>
-                </div>
-            </form>
-        </div>
-
+        <a class="footer-btn icon-first right-content-btn" data-content-id="reform" href="#"><span class="icon icons-letter"></span><span class="text">Написать письмо</span></a>
         <div class="footer-phones-block">
             <a class="phone-num" href="callto:+749579795181">+7 495 797-95-181</a>
-            <a class="btn btn-orange recall-btn" href="#">Заказать звонок</a>
+            <a class="btn btn-orange right-content-btn" data-content-id="recall_form" href="#">Заказать звонок</a>
             <a class="phone-num" href="callto:88005003700">8 800 5003-700</a>
         </div>
         <a class="footer-btn icon-last" href="#"><span class="text">Связаться по Skype</span><span class="icon icons-skype"></span></a>
@@ -431,9 +435,59 @@
                     </ul>
                 </div>
             </div>
-
-
         </div>
+    </div>
+
+    <div id="recall_form" class="recall-form">
+        <h1>Обратный звонок</h1>
+        <form action="#">
+            <div class="row">
+                <p>Уважаемый клиент, укажите ваши имя и телефон, и мы перезвоним вам в ближайшее время.</p>
+            </div>
+            <div class="row">
+                <select>
+                    <option value="1">Тема сообщения: кредиты</option>
+                    <option value="2">Тема сообщения: тест</option>
+                    <option value="3">Тема сообщения: тест2</option>
+                </select>
+            </div>
+            <div class="row">
+                <input type="text" placeholder="Ваше имя"/>
+            </div>
+            <div class="row">
+                <input type="text" placeholder="Ваш телефон"/>
+            </div>
+            <div class="btn-block text-center">
+                <a class="btn btn-orange" href="#">Заказать звонок</a>
+            </div>
+        </form>
+    </div>
+
+    <div id="reform" class="recall-form">
+        <h1>Обратная связь</h1>
+        <form action="#">
+            <div class="row">
+                <select>
+                    <option value="1">Тема сообщения: кредиты</option>
+                    <option value="2">Тема сообщения: тест</option>
+                    <option value="3">Тема сообщения: тест2</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="pull-left">
+                    <input type="text" placeholder="Ваше имя"/>
+                </div>
+                <div class="pull-right">
+                    <input type="text" placeholder="Ваш e-mail"/>
+                </div>
+            </div>
+            <div class="row">
+                <textarea placeholder="Сообщение"></textarea>
+            </div>
+            <div class="btn-block text-center">
+                <a class="btn btn-orange" href="#">Отправить сообщение</a>
+            </div>
+        </form>
     </div>
 
     <script src="js/libs/jquery.fullPage.js"></script>

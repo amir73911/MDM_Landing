@@ -137,6 +137,9 @@
     @include ipad(portrait) {
       width: 80%;
     }
+    @include max-screen-height(740px) {
+      margin: 0 auto;
+    }
     .news-item-header {
       position: relative;
       text-align: center;
