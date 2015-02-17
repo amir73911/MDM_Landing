@@ -2,7 +2,7 @@
   background: url("../images/bgs/1.jpg") no-repeat center top;
 }
 
-.desktop {
+.no-touch {
   .main-page {
     .jumbo-h1,
     .jumbo-caption {
@@ -13,7 +13,7 @@
   }
 }
 
-.desktop.loaded {
+.no-touch .loaded {
   .main-page {
     .jumbo-h1,
     .jumbo-caption {
