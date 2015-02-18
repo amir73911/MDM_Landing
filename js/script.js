@@ -43,7 +43,7 @@ $(document).load(function(){
         mouseDrag: false
     });
 
-    //$('select').styler();
+    $('select').styler();
 
     rightContent();
     showMap();
@@ -189,7 +189,8 @@ function showNews() {
         items = news_btn.parents('.news-item'),
         body = $('body'),
         back = $('.news-list-content-close'),
-        target = $('.news-list-content');
+        target = $('.news-list-content'),
+        news_wrap = $('.news-list-content-wrap');
 
     news_btn.click(function(e){
 
@@ -213,16 +214,23 @@ function showNews() {
 
             target.prepend(content);
         });
+
+        news_wrap.animate({
+            scrollTop: news_wrap.find('.news-item.selected')[0].offsetTop
+        }, 1, function() {
+            isNewsIntoView();
+        });
+
     });
 
     back.click(function(){
+        $('.news-container').trigger('to.owl.carousel', [news_wrap.find('.news-item.selected').index(), 500]);
         $('.news-item').removeClass('selected');
         body.removeClass('news-showed');
         target.removeClass('fadeInUp');
         target.addClass('fadeOutDown');
         $.fn.fullpage.setAllowScrolling(true);
     });
-
 
 }
 function newsScroll() {
@@ -239,4 +247,37 @@ function newsScroll() {
         }
 
     });
+}
+
+function isNewsIntoView() {
+    var wrap = $('.news-list-content-wrap'),
+        news_item = wrap.find('.news-item'),
+        offsets = [];
+
+    news_item.each(function(){
+        offsets.push(Math.round($(this)[0].offsetTop));
+    });
+
+    var o_lenght = offsets.length-1;
+
+    wrap.scroll(function(){
+        for (var i = 0; i <= o_lenght; i++) {
+            if (i == o_lenght) {
+                if (wrap.scrollTop() > offsets[i]) {
+                    if (!news_item.eq(i).hasClass('selected')) {
+                        news_item.removeClass('selected')
+                        news_item.eq(i).addClass('selected')
+                    }
+                }
+            } else {
+                if((wrap.scrollTop() > offsets[i]) && (wrap.scrollTop() < offsets[i+1])) {
+                    if (!news_item.eq(i).hasClass('selected')) {
+                        news_item.removeClass('selected')
+                        news_item.eq(i).addClass('selected')
+                    }
+                }
+            }
+        }
+    });
+
 }

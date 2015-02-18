@@ -1,13 +1,21 @@
 .cards-page {
   background: url("../images/bgs/3.jpg") no-repeat center top;
+  @include ipad(landscape) {
+    background-position: left center;
+  }
   .hand {
     position: absolute;
     bottom: 0;
     left: 0;
+    top: 0;
     text-align: right;
     width: 50%;
+    @include flex-childs-vertical-align(center, left);
     @include ipad {
-      bottom: 70px;
+      //bottom: 70px;
+    }
+    @include ipad(landscape) {
+      width: 60%;
     }
     @include ipad(portrait) {
       display: none;
@@ -30,6 +38,9 @@
       @include flex-childs-vertical-align(center, center);
       width: 100%;
       text-align: center;
+    }
+    @include ipad(landscape) {
+      width: 40%;
     }
   }
 }

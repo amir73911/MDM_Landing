@@ -6,7 +6,7 @@ sass_dir = "sass"
 fonts_dir = "../css/fonts"
 images_dir = "../images"
 javascripts_dir = "../js"
-sourcemap = true
+#sourcemap = true
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
