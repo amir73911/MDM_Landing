@@ -1,11 +1,11 @@
-@include font-face("MetaPro-Medium", font-files("MetaPro/MetaPro-Medium.otf"));
+@include font-face("MetaPro-Medium", font-files("MetaPro/MetaPro-Medium.eot", "MetaPro/MetaPro-Medium.woff", "MetaPro/MetaPro-Medium.ttf", "MetaPro/MetaPro-Medium.svg"));
 
-@include font-face("MetaPro-Normal", font-files("MetaPro/MetaPro-Normal.otf"));
+@include font-face("MetaPro-Normal", font-files("MetaPro/MetaPro-Normal.eot", "MetaPro/MetaPro-Normal.woff", "MetaPro/MetaPro-Normal.ttf", "MetaPro/MetaPro-Normal.svg"));
 
-@include font-face("Geometria", font-files("Geometria/Geometria.otf"));
+@include font-face("Geometria", font-files("Geometria/Geometria.eot", "Geometria/Geometria.svg", "Geometria/Geometria.ttf", "Geometria/Geometria.woff", "Geometria/Geometria.woff2"));
 
-@include font-face("Geometria-Medium", font-files("Geometria/Geometria-Medium.otf"));
+@include font-face("Geometria-Medium", font-files("Geometria/Geometria-Medium.eot", "Geometria/Geometria-Medium.svg", "Geometria/Geometria-Medium.ttf", "Geometria/Geometria-Medium.woff", "Geometria/Geometria-Medium.woff2"));
 
-@include font-face("Geometria-Light", font-files("Geometria/Geometria-Light.otf"));
+@include font-face("Geometria-Light", font-files("Geometria/Geometria-Light.eot", "Geometria/Geometria-Light.svg", "Geometria/Geometria-Light.ttf", "Geometria/Geometria-Light.woff", "Geometria/Geometria-Light.woff2"));
 
-@include font-face("Geometria-Bold", font-files("Geometria/Geometria-Bold.otf"));
+@include font-face("Geometria-Bold", font-files("Geometria/Geometria-Bold.eot", "Geometria/Geometria-Bold.svg", "Geometria/Geometria-Bold.ttf", "Geometria/Geometria-Bold.woff", "Geometria/Geometria-Bold.woff2"));

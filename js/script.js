@@ -43,12 +43,21 @@ $(document).load(function(){
         mouseDrag: false
     });
 
-    $('select').styler();
+    //$('select').styler();
 
     rightContent();
     showMap();
     showNews();
     newsScroll();
+
+    // IE placeholder display:none bug fix
+    $('body').on('focus', 'textarea', function(){
+        var placeholder = $(this).attr('placeholder'),
+            val = $(this).val();
+        if (val == placeholder) {
+            $(this).val('');
+        }
+    });
 
 }());
 
@@ -61,6 +70,7 @@ function rightContent() {
     var body = $('body'),
         header = $('header'),
         footer = $('footer'),
+        map = $('.popup-map'),
         r_content = $('.right-content'),
         rc_button = $('.right-content-btn'),
         rc_overlay = $('.right-content-overlay'),
@@ -69,6 +79,9 @@ function rightContent() {
 
     rc_button.click(function(e){
         e.preventDefault();
+
+        right_content_load($(this).data('content-id'));
+        r_content.find('textarea').focus().blur(); // FF placeholder with display:none bug fix
 
         body.addClass('rightContentOpened');
 
@@ -80,11 +93,13 @@ function rightContent() {
         footer.addClass('moveLeftAnimate');
         section.addClass('moveLeftAnimate');
 
+        if (body.hasClass('mapShowed')) {
+            map.addClass('moveLeftAnimate');
+        }
+
         rc_overlay.addClass('show');
 
-        right_content_load($(this).data('content-id'));
-
-        r_content.delay(1000).queue(function(){
+        r_content.delay(animation_time).queue(function(){
             $(this).addClass('showed').dequeue();
         });
 
@@ -106,8 +121,13 @@ function rightContent() {
 
         r_content.removeClass('showed');
 
+        map.removeClass('moveLeftAnimate');
+
         rc_overlay.removeClass('show');
-        $.fn.fullpage.setAllowScrolling(true);
+
+        if (!body.hasClass('mapShowed')) {
+            $.fn.fullpage.setAllowScrolling(true);
+        }
     });
 }
 
@@ -125,15 +145,17 @@ function showMap() {
         popup_map = $('.popup-map');
 
     map_btn.click(function(e){
+        e.preventDefault();
 
         mapCoords();
 
-        e.preventDefault();
         if (popup_map.hasClass('showed')) {
             popup_map.removeClass('showed');
+            $('body').removeClass('mapShowed');
             $.fn.fullpage.setAllowScrolling(true);
         } else {
             popup_map.addClass('showed');
+            $('body').addClass('mapShowed');
             $.fn.fullpage.setAllowScrolling(false);
         }
     });
