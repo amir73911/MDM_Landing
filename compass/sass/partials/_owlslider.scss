@@ -14,6 +14,9 @@
     width: $third;
     height: 100%;
     font-size: 0;
+    @media only screen and (max-device-width: 667px) {
+      width: $third/2;
+    }
   }
   .owl-prev {
     left: 0;

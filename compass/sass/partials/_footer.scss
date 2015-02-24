@@ -10,6 +10,9 @@ footer {
   @include ipad(portrait) {
     padding: 0 15px;
   }
+  @media only screen and (max-device-width: 667px) {
+    margin: 0 15px;
+  }
   @include transition(all $animation_time);
   @include flex-childs-vertical-align();
   .footer-btn {
@@ -35,6 +38,11 @@ footer {
        display: none;
      }
     }
+    @media only screen and (max-device-width: 667px) {
+      .icon {
+        display: none;
+      }
+    }
   }
   .footer-phones-block {
     .phone-num {
@@ -42,6 +50,10 @@ footer {
       vertical-align: middle;
       @include ipad {
         font-size: 18px;
+        line-height: 30px;
+      }
+      @media only screen and (max-device-width: 667px) {
+        font-size: 14px;
         line-height: 30px;
       }
       &:hover {
@@ -52,6 +64,10 @@ footer {
       margin: 0 30px;
       @include ipad(portrait) {
         margin: 0 5px;
+      }
+      @media only screen and (max-device-width: 667px) {
+        margin: 0 5px;
+        padding: 0 10px;
       }
     }
   }

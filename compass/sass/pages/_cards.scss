@@ -20,6 +20,9 @@
     @include ipad(portrait) {
       display: none;
     }
+    @media only screen and (max-device-width: 667px) {
+      display: none;
+    }
     img {
       width: 100%;
       height: auto;
@@ -41,6 +44,11 @@
     }
     @include ipad(landscape) {
       width: 40%;
+    }
+    @media only screen and (max-device-width: 667px) {
+      @include flex-childs-vertical-align(center, center);
+      width: 100%;
+      text-align: center;
     }
   }
 }

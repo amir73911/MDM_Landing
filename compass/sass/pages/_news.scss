@@ -28,6 +28,9 @@
         @include ipad {
           padding-bottom: 115px;
         }
+        @media only screen and (max-device-width: 667px) {
+          padding-bottom: 400px;
+        }
         .news-title {
           width: $third;
           position: relative;
@@ -39,6 +42,9 @@
             width: $third*2;
           }
           @include ipad(portrait) {
+            width: $third*2;
+          }
+          @media only screen and (max-device-width: 667px) {
             width: $third*2;
           }
           time {
@@ -137,6 +143,9 @@
     @include ipad(portrait) {
       width: 80%;
     }
+    @media only screen and (max-device-width: 667px) {
+      width: 80%;
+    }
     @include max-screen-height(740px) {
       margin: 0 auto;
     }
@@ -159,6 +168,10 @@
         margin-left: -25%;
         z-index: 6;
         @include ipad {
+          width: $third*2;
+          margin-left: -$third;
+        }
+        @media only screen and (max-device-width: 667px) {
           width: $third*2;
           margin-left: -$third;
         }

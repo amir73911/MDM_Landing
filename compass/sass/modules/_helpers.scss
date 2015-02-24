@@ -14,6 +14,9 @@
   @include ipad(portrait) {
     @include transform(translate3d(-$third*2, 0, 0));
   }
+  @media only screen and (max-device-width: 667px) {
+    @include transform(translate3d(-$third*2, 0, 0));
+  }
 }
 .moveRightAnimate {
   @include transition(all $animation_time);

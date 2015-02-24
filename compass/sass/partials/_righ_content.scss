@@ -16,6 +16,9 @@
   @include ipad(portrait) {
     width: $third*2;
   }
+  @media only screen and (max-device-width: 667px) {
+    width: $third*2;
+  }
   .right-content-text {
     display: block;
     @extend .std;
@@ -48,6 +51,9 @@
       width: 50%;
     }
     @include ipad(portrait) {
+      width: $third;
+    }
+    @media only screen and (max-device-width: 667px) {
       width: $third;
     }
   }
