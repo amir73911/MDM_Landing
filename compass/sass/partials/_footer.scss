@@ -14,7 +14,13 @@ footer {
     margin: 0 15px;
   }
   @include transition(all $animation_time);
-  @include flex-childs-vertical-align();
+
+  @at-root .no-flexbox footer {
+    @include flex-childs-vertical-align-ie();
+  }
+  @at-root .flexbox footer {
+    @include flex-childs-vertical-align();
+  }
   .footer-btn {
     font: 16px 'MetaPro-Normal';
     &:hover {

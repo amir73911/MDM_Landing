@@ -34,7 +34,7 @@ $(document).load(function(){
     });
 
     $('.news-container').owlCarousel({
-        loop:false,
+        loop:true,
         margin:0,
         nav:true,
         items: 1,

@@ -24,5 +24,10 @@
 }
 
 .vertical-middle {
-  @include flex-childs-vertical-align();
+  @at-root .no-flexbox .vertical-middle {
+    @include flex-childs-vertical-align-ie();
+  }
+  @at-root .flexbox .vertical-middle {
+    @include flex-childs-vertical-align();
+  }
 }

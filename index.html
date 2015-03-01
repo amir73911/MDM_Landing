@@ -31,6 +31,17 @@
     <script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.0.min.js"><\/script>')</script>
 
     <script>
+        var $buoop = {vs:{i:9,f:15,o:12.1,s:5.1},c:2};
+        function $buo_f(){
+            var e = document.createElement("script");
+            e.src = "//browser-update.org/update.js";
+            document.body.appendChild(e);
+        };
+        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+        catch(e){window.attachEvent("onload", $buo_f)}
+    </script>
+
+    <script>
         $(window).load(function() {
             $('.loading').fadeOut();
             loading();
@@ -432,6 +443,7 @@
     <script src="js/libs/owl.carousel.min.js"></script>
     <script src="js/libs/jquery.formstyler.js"></script>
     <script src="js/libs/dropzone.min.js"></script>
+    <script src="js/libs/flexie.min.js"></script>
     <script src="js/script.js"></script>
 
     <!--[if lt IE 7 ]>

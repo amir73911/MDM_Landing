@@ -10,7 +10,14 @@
     top: 0;
     text-align: right;
     width: 50%;
-    @include flex-childs-vertical-align(center, left);
+
+    @at-root .no-flexbox .cards-page .hand {
+      @include flex-childs-vertical-align-ie(center, left);
+    }
+    @at-root .flexbox .cards-page .hand {
+      @include flex-childs-vertical-align(center, left);
+    }
+
     @include ipad {
       //bottom: 70px;
     }
@@ -18,10 +25,10 @@
       width: 60%;
     }
     @include ipad(portrait) {
-      display: none;
+      display: none !important;
     }
     @media only screen and (max-device-width: 667px) {
-      display: none;
+      display: none !important;
     }
     img {
       width: 100%;
@@ -36,9 +43,23 @@
     width: 50%;
     text-align: left;
     padding: 0 0 80px 5%;
-    @include flex-childs-vertical-align();
+
+    @at-root .no-flexbox .cards-page .content-wrapp {
+      @include flex-childs-vertical-align-ie();
+    }
+    @at-root .flexbox .cards-page .content-wrapp {
+      @include flex-childs-vertical-align();
+    }
+
     @include ipad(portrait) {
-      @include flex-childs-vertical-align(center, center);
+
+      @at-root .no-flexbox .cards-page .content-wrapp {
+        @include flex-childs-vertical-align-ie(center, center);
+      }
+      @at-root .flexbox .cards-page .content-wrapp {
+        @include flex-childs-vertical-align(center, center);
+      }
+
       width: 100%;
       text-align: center;
     }
@@ -46,7 +67,14 @@
       width: 40%;
     }
     @media only screen and (max-device-width: 667px) {
-      @include flex-childs-vertical-align(center, center);
+
+      @at-root .no-flexbox .cards-page .content-wrapp {
+        @include flex-childs-vertical-align-ie(center, center);
+      }
+      @at-root .flexbox .cards-page .content-wrapp {
+        @include flex-childs-vertical-align(center, center);
+      }
+
       width: 100%;
       text-align: center;
     }

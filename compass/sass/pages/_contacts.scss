@@ -24,7 +24,18 @@
     @include ipad(portrait) {
       width: 80%;
     }
-    @include flex-childs-vertical-align();
+
+    @at-root .no-flexbox .contacts-page .contacts-block {
+      @include flex-childs-vertical-align-ie();
+      .btn-with-ico-only,
+      .circle-half {
+        display: none;
+      }
+    }
+    @at-root .flexbox .contacts-page .contacts-block {
+      @include flex-childs-vertical-align();
+    }
+
     .circle-half {
       position: absolute;
       top: -40px;
@@ -74,7 +85,7 @@
           a {
             color: $blue_text;
             font: 20px/20px 'MetaPro-Medium';
-            letter-spacing: -2px;
+            letter-spacing: -1px;
           }
           .capt {
             font: 16px/30px 'Geometria-Light';

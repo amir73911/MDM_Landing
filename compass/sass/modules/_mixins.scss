@@ -30,10 +30,17 @@
     }
 }
 
-@mixin flex-childs-vertical-align($type: center, $justify: space-between) {
+@mixin flex-childs-vertical-align ($type: center, $justify: space-between) {
     @include display-flex(inline-flex);
     @include align-items($type);
     @include justify-content($justify);
+}
+
+@mixin flex-childs-vertical-align-ie ($type: center, $justify: justify) {
+
+    display: box;
+    box-align: $type;
+    box-pack: $justify;
 }
 
 @mixin custom-cursor($type: default) {
