@@ -44,26 +44,14 @@
 }
 
 @mixin custom-cursor($type: default) {
-    @if($type == 'default') {
-        cursor: inline-image('cursors/default.png') 15 15, default;
-    }
-    @if($type == 'pointer') {
-        cursor: inline-image('cursors/default.png') 15 15, pointer;
-    }
     @if($type == 'close') {
-        cursor: inline-image('cursors/close.png') 15 15, not-allowed;
-    }
-    @if($type == 'up') {
-        cursor: inline-image('cursors/up.png') 15 15, move;
-    }
-    @if($type == 'down') {
-        cursor: inline-image('cursors/down.png') 15 15, move;
+        cursor: inline-image('cursors/close.png') 30 30, not-allowed;
     }
     @if($type == 'left') {
-        cursor: inline-image('cursors/left.png') 15 15, move;
+        cursor: inline-image('cursors/left.png') 30 30, move;
     }
     @if($type == 'right') {
-        cursor: inline-image('cursors/right.png') 15 15, move;
+        cursor: inline-image('cursors/right.png') 30 30, move;
     }
 }
 
