@@ -208,7 +208,7 @@ function mapCoords() {
 
 function showNews() {
     var news_btn = $('.news-btn'),
-        items = news_btn.parents('.news-item'),
+        items = news_btn.parents('.owl-item').not('.cloned').find('.news-item'),
         body = $('body'),
         back = $('.news-list-content-close'),
         target = $('.news-list-content'),
@@ -233,6 +233,8 @@ function showNews() {
 
             content.find('.news-btn').remove();
             content.find('.news-title').append('<a href="#" class="btn btn-transparent btn-with-ico-only next-news-btn"><span class="icon icons-arrows-down"></span></a>');
+
+            content.find('.news-content').append('<div class="addthis_native_toolbox"></div>');
 
             target.prepend(content);
         });

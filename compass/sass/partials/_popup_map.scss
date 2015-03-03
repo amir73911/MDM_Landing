@@ -110,6 +110,6 @@
 
 .no-touch {
   .popup-map {
-    @include flex-childs-vertical-align();
+    @include flex-childs-vertical-align(center, center);
   }
 }
