@@ -234,9 +234,7 @@ function showNews() {
             content.find('.news-btn').remove();
             content.find('.news-title').append('<a href="#" class="btn btn-transparent btn-with-ico-only next-news-btn"><span class="icon icons-arrows-down"></span></a>');
 
-            content.find('.news-content').append('<div class="addthis_native_toolbox"></div>');
-
-            target.prepend(content);
+            target.append(content);
         });
 
         news_wrap.animate({
