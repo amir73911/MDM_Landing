@@ -22,18 +22,19 @@ footer {
     @include flex-childs-vertical-align();
   }
   .footer-btn {
-    font: 16px 'MetaPro-Normal';
+    font: 14px 'MetaPro-Medium';
+    text-transform: uppercase;
     &:hover {
       color: darken($white, 20%);
     }
     &.icon-first {
       .icon {
-        margin-right: 18px;
+        margin-right: 13px;
       }
     }
     &.icon-last {
       .icon {
-        margin-left: 18px;
+        margin-left: 13px;
       }
     }
     .text {
@@ -52,7 +53,7 @@ footer {
   }
   .footer-phones-block {
     .phone-num {
-      font: 20px 'Geometria-Medium';
+      font: 18px 'Geometria-Medium';
       vertical-align: middle;
       @include ipad {
         font-size: 18px;
