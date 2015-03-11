@@ -14,6 +14,16 @@
     width: $third;
     height: 100%;
     font-size: 0;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: $third;
+      background: inline-image('cursors/right.png') no-repeat;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+    }
     @media only screen and (max-device-width: 667px) {
       width: $third/2;
     }
@@ -21,9 +31,16 @@
   .owl-prev {
     left: 0;
     @include custom-cursor(left);
+    &:before {
+      right: 40px;
+      transform: rotate(180deg);
+    }
   }
   .owl-next {
     right: 0;
     @include custom-cursor(right);
+    &:before {
+      left: 40px;
+    }
   }
 }
