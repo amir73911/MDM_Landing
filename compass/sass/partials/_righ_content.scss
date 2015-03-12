@@ -43,6 +43,17 @@
   @include custom-cursor(close);
   @include opacity(0);
   @include transition(all $animation_time);
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background: inline-image('cursors/close.png') no-repeat;
+  }
   &.show {
     visibility: visible;
     width: 100% - $third;

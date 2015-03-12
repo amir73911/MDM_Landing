@@ -19,7 +19,6 @@
       display: block;
       position: absolute;
       bottom: $third;
-      background: inline-image('cursors/right.png') no-repeat;
       width: 60px;
       height: 60px;
       cursor: pointer;
@@ -33,7 +32,7 @@
     @include custom-cursor(left);
     &:before {
       right: 40px;
-      transform: rotate(180deg);
+      background: inline-image('cursors/left.png') no-repeat;
     }
   }
   .owl-next {
@@ -41,6 +40,7 @@
     @include custom-cursor(right);
     &:before {
       left: 40px;
+      background: inline-image('cursors/right.png') no-repeat;
     }
   }
 }
