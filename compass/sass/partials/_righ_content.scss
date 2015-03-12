@@ -52,7 +52,14 @@
     width: 60px;
     height: 60px;
     cursor: pointer;
+    @include opacity(0.6);
+    @include transition(all $animation_time);
     background: inline-image('cursors/close.png') no-repeat;
+  }
+  &:hover {
+    &:before {
+      @include opacity(1);
+    }
   }
   &.show {
     visibility: visible;
