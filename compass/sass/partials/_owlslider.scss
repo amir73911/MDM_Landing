@@ -14,40 +14,32 @@
     width: $third;
     height: 100%;
     font-size: 0;
-    &:before {
-      content: "";
-      display: block;
+    .btn {
       position: absolute;
       bottom: $third;
-      width: 60px;
-      height: 60px;
-      cursor: pointer;
-      @include opacity(0.6);
-      @include transition(all $animation_time);
     }
-    &:hover {
-      &:before {
-        @include opacity(1);
-      }
-    }
-    @media only screen and (max-device-width: 667px) {
+    @include ipad {
       width: $third/2;
     }
   }
   .owl-prev {
     left: 0;
     @include custom-cursor(left);
-    &:before {
+    .btn {
       right: 40px;
-      background: inline-image('cursors/left.png') no-repeat;
+      @include ipad {
+        right: 0;
+      }
     }
   }
   .owl-next {
     right: 0;
     @include custom-cursor(right);
-    &:before {
+    .btn {
       left: 40px;
-      background: inline-image('cursors/right.png') no-repeat;
+      @include ipad {
+        left: 0;
+      }
     }
   }
 }

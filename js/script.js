@@ -49,6 +49,7 @@ $(document).load(function(){
     showMap();
     showNews();
     newsScroll();
+    addButtons();
 
     // IE placeholder display:none bug fix
     $('body').on('focus', 'textarea', function(){
@@ -282,19 +283,25 @@ function isNewsIntoView() {
             if (i == o_lenght) {
                 if (wrap.scrollTop() > offsets[i]) {
                     if (!news_item.eq(i).hasClass('selected')) {
-                        news_item.removeClass('selected')
-                        news_item.eq(i).addClass('selected')
+                        news_item.removeClass('selected');
+                        news_item.eq(i).addClass('selected');
                     }
                 }
             } else {
                 if((wrap.scrollTop() > offsets[i]) && (wrap.scrollTop() < offsets[i+1])) {
                     if (!news_item.eq(i).hasClass('selected')) {
-                        news_item.removeClass('selected')
-                        news_item.eq(i).addClass('selected')
+                        news_item.removeClass('selected');
+                        news_item.eq(i).addClass('selected');
                     }
                 }
             }
         }
     });
+}
 
+function addButtons() {
+    var closeTarget = $('.right-content-overlay, .news-list-content-close.right');
+    closeTarget.append('<a href="#" class="btn btn-transparent btn-with-ico-only next-news-btn"><span class="icon icons-close"></span></a>');
+    $('.owl-prev').append('<a href="#" class="btn btn-transparent btn-with-ico-only next-news-btn"><span class="icon icons-left"></span></a>');
+    $('.owl-next').append('<a href="#" class="btn btn-transparent btn-with-ico-only next-news-btn"><span class="icon icons-right"></span></a>');
 }

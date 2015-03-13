@@ -26,7 +26,13 @@
         padding-bottom: 175px;
 
         @at-root .no-flexbox .news-page .news-container .news-item .news-item-header {
-          @include flex-childs-vertical-align-ie(bottom, center);
+          @include childs-vertical-align(bottom, true);
+        }
+        @at-root .no-flexbox .news-page .news-container  {
+          .owl-prev,
+          .owl-next {
+            z-index: 6;
+          }
         }
         @at-root .flexbox .news-page .news-container .news-item .news-item-header {
           @include flex-childs-vertical-align(flex-end, center);
@@ -131,6 +137,11 @@
     }
     &.right {
       right: 0;
+      .btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
     }
     &.top,
     &.bottom {

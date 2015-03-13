@@ -15,7 +15,7 @@
 }
 
 @mixin childs-vertical-align($type: middle, $no-gap: false) {
-    @if ($no-gap) {
+    @if ($no-gap == 'true') {
         font-size: 0;
     }
     &:before {
