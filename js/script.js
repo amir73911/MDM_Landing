@@ -104,10 +104,6 @@ function rightContent() {
 
         rc_overlay.addClass('show');
 
-        r_content.delay(animation_time).queue(function(){
-            $(this).addClass('showed').dequeue();
-        });
-
         $.fn.fullpage.setAllowScrolling(false);
     });
 
@@ -123,8 +119,6 @@ function rightContent() {
         header.addClass('moveRightAnimate');
         footer.addClass('moveRightAnimate');
         section.addClass('moveRightAnimate');
-
-        r_content.removeClass('showed');
 
         map.removeClass('moveLeftAnimate');
 

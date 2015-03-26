@@ -30,14 +30,51 @@
     }
 }
 
+// ie10+
 @mixin flex-childs-vertical-align ($type: center, $justify: space-between) {
-    @include display-flex(inline-flex);
-    @include align-items($type);
-    @include justify-content($justify);
+
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    @if $type == flex-start {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+    } @else if $type == flex-end {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+    } @else {
+        -webkit-box-align: $type;
+        -ms-flex-align: $type;
+    }
+    -webkit-align-items: $type;
+    -moz-align-items: $type;
+    align-items: $type;
+
+    @if $justify == flex-start {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+    } @else if $justify == flex-end {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+    } @else if $justify == space-between {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    } @else if $justify == space-around {
+        -ms-flex-pack: distribute;
+    } @else {
+        -webkit-box-pack: $justify;
+        -ms-flex-pack: $justify;
+    }
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    justify-content: $justify;
 }
 
+// ie9
 @mixin flex-childs-vertical-align-ie ($type: center, $justify: justify) {
-
     display: box;
     box-align: $type;
     box-pack: $justify;
