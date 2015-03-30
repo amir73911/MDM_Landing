@@ -60,10 +60,6 @@ $(document).load(function(){
         }
     });
 
-    $('.services-page .btn-mega').click(function(e){
-        e.preventDefault();
-    });
-
 }());
 
 function loading() {
@@ -104,6 +100,14 @@ function rightContent() {
 
         rc_overlay.addClass('show');
 
+        r_content.delay(animation_time).queue(function(){
+            if (body.hasClass('rightContentOpened')) {
+                $(this).addClass('showed').dequeue();
+            } else {
+                $(this).dequeue();
+            }
+        });
+
         $.fn.fullpage.setAllowScrolling(false);
     });
 
@@ -123,6 +127,8 @@ function rightContent() {
         map.removeClass('moveLeftAnimate');
 
         rc_overlay.removeClass('show');
+
+        r_content.removeClass('showed');
 
         if (!body.hasClass('mapShowed')) {
             $.fn.fullpage.setAllowScrolling(true);
